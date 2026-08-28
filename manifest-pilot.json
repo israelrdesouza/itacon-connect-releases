@@ -2,7 +2,7 @@
   "version": "2.0.2",
   "channel": "pilot",
   "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.2-pilot/ITACON-Connect-Setup-2.0.2.exe",
-  "sha256": "522b536c5d01dec68494b5add58c2af14d616afd7cd59f339baece7dd633a323",
-  "releaseNotes": "Teste real do pipeline de instalador unico (mesmo Setup.exe para instalacao nova e atualizacao) com dialogo de confirmacao obrigatoria antes de baixar/instalar. Preserva config.json existente e nao reconfigura Tailscale em upgrade.",
+  "sha256": "0e843bd73b5486db249903e8e24fbfa5de5825a1c64eb5fdd2bde2374e28b474",
+  "releaseNotes": "Instalador unico (nova instalacao + upgrade) com dialogo de confirmacao obrigatoria. Preserva config.json existente. Deteccao do Tailscale corrigida: verifica o executavel real instalado na maquina (nao mais se e upgrade do ITACON) - nunca reinstala/reautentica Tailscale ja presente, independente de ser instalacao nova ou upgrade.",
   "mandatory": true
 }
