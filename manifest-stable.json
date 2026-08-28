@@ -1,8 +1,8 @@
 {
-  "version": "2.0.0",
+  "version": "2.0.3",
   "channel": "stable",
-  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.0-stable/ItaconConnect_2.0.0-stable.zip",
-  "sha256": "a7417279e21252a20ed78c5a1095c19e5c47a897bd8cab835395592619e2ada5",
-  "releaseNotes": "ITACON Connect v2.0.0 - UX premium, local-first, Drive Letter Manager, correcao de classificacao de modo (LAN/VPN) e fundacao de auto-update obrigatorio.",
-  "mandatory": false
+  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.3-stable/ITACON-Connect-Setup-2.0.3.exe",
+  "sha256": "7D66FC209DA35AF1C4E187183DFED0ED61CF1DADD1672A687E3FFC2B7288664B",
+  "releaseNotes": "ITACON Connect 2.0.3 stable: instalador universal unico, share unico ITACON, LAN/Tailscale validados, onboarding Tailscale aprovado, upgrade/reinstalacao aprovado e anti-loop preservado.",
+  "mandatory": true
 }
