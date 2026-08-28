@@ -1,0 +1,8 @@
+{
+  "version": "2.0.0",
+  "channel": "stable",
+  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.0-stable/ItaconConnect_2.0.0-stable.zip",
+  "sha256": "a7417279e21252a20ed78c5a1095c19e5c47a897bd8cab835395592619e2ada5",
+  "releaseNotes": "ITACON Connect v2.0.0 - UX premium, local-first, Drive Letter Manager, correcao de classificacao de modo (LAN/VPN) e fundacao de auto-update obrigatorio.",
+  "mandatory": false
+}

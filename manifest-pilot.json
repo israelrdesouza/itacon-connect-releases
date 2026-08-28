@@ -1,0 +1,8 @@
+{
+  "version": "2.0.1",
+  "channel": "pilot",
+  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.1-pilot/ItaconConnect_2.0.1-pilot.zip",
+  "sha256": "bc0da270ede221724faa620c778922a8067438ac3e1f498dc5129dcc5b35f33d",
+  "releaseNotes": "Teste real do pipeline de auto-update obrigatorio (2.0.0 -> 2.0.1-pilot). Sem mudanca funcional - so incremento de versao para validar o fluxo ponta a ponta.",
+  "mandatory": true
+}
