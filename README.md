@@ -8,8 +8,12 @@ e VPN).
 
 - Manifestos de atualização (`manifest-stable.json`, `manifest-pilot.json`)
   consumidos pelo mecanismo de auto-update do próprio aplicativo.
-- Pacotes `.zip` publicados como [GitHub Releases](../../releases) deste
-  repositório, referenciados pelos manifestos.
+- **Instalador oficial único** (`ITACON-Connect-Setup-X.Y.Z.exe`, Inno
+  Setup) publicado como [GitHub Releases](../../releases) deste
+  repositório, referenciado pelos manifestos — o mesmo `.exe` serve tanto
+  para instalação nova quanto para atualização de uma instalação
+  existente (detecção automática pelo próprio instalador). Formato `.zip`
+  usado até a v2.0.1-pilot foi descontinuado a partir da v2.0.2.
 
 ## O que **não** tem aqui
 
@@ -35,30 +39,35 @@ O aplicativo só aplica uma atualização vinda do canal que corresponde ao
 
 ```json
 {
-  "version": "2.0.1",
+  "version": "2.0.2",
   "channel": "pilot",
-  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/vX.Y.Z/ItaconConnect_X.Y.Z.zip",
-  "sha256": "<sha256 hex do pacote .zip, 64 caracteres>",
+  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/vX.Y.Z/ITACON-Connect-Setup-X.Y.Z.exe",
+  "sha256": "<sha256 hex do instalador .exe, 64 caracteres>",
   "releaseNotes": "Resumo curto do que mudou.",
-  "mandatory": false
+  "mandatory": true
 }
 ```
 
 Regras de segurança aplicadas pelo cliente antes de qualquer download:
 
 - `downloadUrl` precisa ser **HTTPS** — qualquer outro esquema é recusado.
-- `sha256` é recalculado sobre o pacote baixado e comparado byte a byte com
-  o valor publicado aqui; se divergir, a atualização é abortada e o
-  arquivo é descartado sem ser aplicado.
+- `sha256` é recalculado sobre o instalador baixado e comparado byte a
+  byte com o valor publicado aqui; se divergir, a atualização é abortada,
+  o instalador **não é executado** e o arquivo é descartado.
 - `version` precisa ser semver válido (`MAJOR.MINOR.PATCH`).
+- Quando `mandatory: true`, o app mostra um diálogo pedindo confirmação
+  explícita ("Instalar agora" / "Sair") antes de baixar qualquer coisa —
+  nunca baixa/instala silenciosamente sem o usuário decidir.
 
 ## Processo de release
 
 1. Build local validado (testes + build limpos).
-2. Pacote `.zip` gerado com o conteúdo esperado pelo Updater (arquivos do
-   app na raiz do zip, sem pasta extra).
-3. SHA-256 do `.zip` calculado.
-4. GitHub Release criada neste repositório com o `.zip` anexado.
+2. Instalador único gerado com o Inno Setup (`installer/
+   ItaconConnectColaborador.iss`) — mesmo `.exe` para instalação nova e
+   atualização, `AppId` fixo permite ao Inno Setup detectar sozinho uma
+   instalação existente.
+3. SHA-256 do `.exe` calculado.
+4. GitHub Release criada neste repositório com o `.exe` anexado.
 5. Manifesto do canal correspondente atualizado com a URL da release e o
    SHA-256 real.
 6. Canal `pilot` primeiro, sempre. Promoção para `stable` é manual e
