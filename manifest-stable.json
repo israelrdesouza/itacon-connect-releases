@@ -1,8 +1,8 @@
 {
-  "version": "2.0.3",
+  "version": "2.0.4",
   "channel": "stable",
-  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.3-stable/ITACON-Connect-Setup-2.0.3.exe",
-  "sha256": "7D66FC209DA35AF1C4E187183DFED0ED61CF1DADD1672A687E3FFC2B7288664B",
-  "releaseNotes": "ITACON Connect 2.0.3 stable: instalador universal unico, share unico ITACON, LAN/Tailscale validados, onboarding Tailscale aprovado, upgrade/reinstalacao aprovado e anti-loop preservado.",
+  "downloadUrl": "https://github.com/israelrdesouza/itacon-connect-releases/releases/download/v2.0.4-stable/ITACON-Connect-Setup-2.0.4.exe",
+  "sha256": "91C8E3788BF5C15DEE12177FD131EF9F949217FE4952889C2192E928110DC6AC",
+  "releaseNotes": "ITACON Connect 2.0.4 stable: hotfix de estabilidade do onboarding Tailscale. Corrige regressao de estado quando o script elevado ja gravou COMPLETE recente em ProgramData, impedindo que cache local obsoleto mostre Erro de provisionamento. Mandatory para migrar versoes anteriores.",
   "mandatory": true
 }
